@@ -201,7 +201,7 @@ if (isset($_GET['logout'])) {
   </style>
 </head>
 <body>
-  <img src="../public/wdfimg/logo.png" alt="logo" height="100" class="logo" />
+  <img src="logo.png" alt="logo" height="100" class="logo" />
   <h1>SIGN IN / SIGN UP</h1>
 
   <?php if ($message) echo "<p class='message'>$message</p>"; ?>
@@ -263,3 +263,4 @@ if (isset($_GET['logout'])) {
   </footer>
 </body>
 </html>
+
