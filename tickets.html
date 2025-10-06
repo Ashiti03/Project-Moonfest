@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ticket Central</title>
+  <style>
+    body {
+      background-image: linear-gradient(rgb(0, 0, 0), rgb(28, 28, 27), rgb(47, 47, 45), rgb(70, 70, 67));
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    img.logo { display: block; margin: 20px auto; height: 100px; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0 15px; }
+    tr {
+      background-color: rgb(30, 30, 30);
+      border-radius: 15px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+    tr td:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
+    tr td:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+    tr:hover {
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+      transform: scale(1.02);
+      background-color: rgb(50, 50, 50);
+    }
+
+    td { padding: 20px; vertical-align: middle; }
+    img.artist { border-radius: 10px; width: 150px; height: auto; }
+    button {
+      padding: 8px 16px;
+      margin-right: 10px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover { background-color: #666; }
+
+    nav { background-color: rgb(0,0,0); padding: 10px 0; }
+    nav ul { list-style: none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+    nav ul li { display: inline; }
+    nav ul li a { color:white; text-decoration:none; font-weight:bold; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    footer { margin-top:50px; padding:20px; background-color: rgb(20,20,20); font-size:0.9em; text-align:center; }
+    a { color:white; text-decoration:none; }
+    a:hover { text-decoration: underline; }
+
+    h1 { text-align:center; font-size:40px; margin-top:30px; }
+    i { text-align:center; display:block; margin:0 20px 30px 20px; }
+
+    /* Popup styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      background:#222; color:white;
+      padding:30px 24px;
+      border-radius:16px;
+      box-shadow:0 0 30px #000;
+      z-index: 9999;
+      min-width:300px;
+    }
+    .popup h3 { margin-top:0; }
+    .popup input { width:100%; margin-bottom:10px; padding:6px; border-radius:6px; border:none; }
+    #popupOverlay {
+      display:none;
+      position: fixed; top:0; left:0; width:100vw; height:100vh;
+      background: rgba(0,0,0,0.6); z-index: 9998;
+    }
+
+    .confirmation {
+      background-color: #444;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 20px auto;
+      text-align: center;
+      max-width: 600px;
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <img src="wdfimg/logo.png" alt="logo" class="logo" />
+
+  <nav>
+    <ul>
+      <li><a href="/vsphp/Moonfest/public/index.html">Home</a></li>
+      <li><a href="/vsphp/Moonfest/public/lineup.html">Lineup</a></li>
+      <li><a href="/vsphp/Moonfest/public/tickets.html">Tickets</a></li>
+      <li><a href="/vsphp/Moonfest/public/plan.html">Plan</a></li>
+      <li><a href="/vsphp/Moonfest/public/news.html">News | Blog</a></li>
+      <li><a href="/vsphp/Moonfest/public/archives.html">Archives</a></li>
+      <li><a href="/vsphp/Moonfest/public/merch.html">Merch</a></li>
+      <li><a href="/vsphp/Moonfest/auth/sign.php">Sign in/up</a></li>
+      <li><a href="/vsphp/Moonfest/public/FAQs.html">FAQs</a></li>
+      <li><a href="/vsphp/Moonfest/public/aboutus.html">About MOONFEST</a></li>
+    </ul>
+  </nav>
+
+  <h1>TICKET CENTRAL</h1>
+  <i>
+    Your tickets will be emailed to you upon purchase. When you arrive at MOONFEST, be
+    sure to have your tickets ready to be scanned. Tickets can be printed or presented on a smartphone. If you
+    have any questions, please email us at: moonfest@redrocks.org
+  </i>
+
+  <table>
+    <!-- Artist rows -->
+    <tr>
+      <td width="50%" align="center"><img src="wdfimg/AGLOGO.jpg" alt="ari" class="artist" /></td>
+      <td align="left">
+        <b>Artist: ARIANA GRANDE</b><br/>
+        <b>Date: June 25, 2025</b><br/>
+        <b>Time: 6:45 PM-UST</b><br/><br/>
+        <button class="ticket-btn" data-pass="General Pass" data-artist="ARIANA GRANDE">GET GENERAL PASS</button>
+        <button class="ticket-btn" data-pass="VIP Pass" data-artist="ARIANA GRANDE">GET VIP PASS</button>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center"><img src="wdfimg/dclogo.jpg" alt="doja" class="artist" /></td>
+      <td align="left">
+        <b>Artist: DOJA CAT</b><br/>
+        <b>Date: June 28, 2025</b><br/>
+        <b>Time: 7:30 PM-UST</b><br/><br/>
+        <button class="ticket-btn" data-pass="General Pass" data-artist="DOJA CAT">GET GENERAL PASS</button>
+        <button class="ticket-btn" data-pass="VIP Pass" data-artist="DOJA CAT">GET VIP PASS</button>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center"><img src="wdfimg/nbhd.jpg" alt="nbhd" class="artist" /></td>
+      <td align="left">
+        <b>Artist: THE NEIGHBOURHOOD</b><br/>
+        <b>Date: July 2, 2025</b><br/>
+        <b>Time: 8:00 PM-UST</b><br/><br/>
+        <button class="ticket-btn" data-pass="General Pass" data-artist="THE NEIGHBOURHOOD">GET GENERAL PASS</button>
+        <button class="ticket-btn" data-pass="VIP Pass" data-artist="THE NEIGHBOURHOOD">GET VIP PASS</button>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center"><img src="wdfimg/calogo.jpg" alt="chase" class="artist" /></td>
+      <td align="left">
+        <b>Artist: CHASE ATLANTIC</b><br/>
+        <b>Date: June 18, 2025</b><br/>
+        <b>Time: 7:20 PM-UST</b><br/><br/>
+        <button class="ticket-btn" data-pass="General Pass" data-artist="CHASE ATLANTIC">GET GENERAL PASS</button>
+        <button class="ticket-btn" data-pass="VIP Pass" data-artist="CHASE ATLANTIC">GET VIP PASS</button>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center"><img src="wdfimg/lanalogo.jpg" alt="lana" class="artist" /></td>
+      <td align="left">
+        <b>Artist: LANA DEL REY</b><br/>
+        <b>Date: June 15, 2025</b><br/>
+        <b>Time: 6:35 PM-UST</b><br/><br/>
+        <button class="ticket-btn" data-pass="General Pass" data-artist="LANA DEL REY">GET GENERAL PASS</button>
+        <button class="ticket-btn" data-pass="VIP Pass" data-artist="LANA DEL REY">GET VIP PASS</button>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center"><img src="wdfimg/weeknflogo.png" alt="abel" class="artist" /></td>
+      <td align="left">
+        <b>Artist: THE WEEKND</b><br/>
+        <b>Date: July 6, 2025</b><br/>
+        <b>Time: 7:50 PM-UST</b><br/><br/>
+        <button class="ticket-btn" data-pass="General Pass" data-artist="THE WEEKND">GET GENERAL PASS</button>
+        <button class="ticket-btn" data-pass="VIP Pass" data-artist="THE WEEKND">GET VIP PASS</button>
+      </td>
+    </tr>
+  </table>
+
+  <div id="pageMessage" class="confirmation"></div>
+
+  <p align="center"><u><a href="index.html">Go Back To Home</a></u></p>
+  <footer><p>© 2025 MOONFEST. All rights reserved.</p></footer>
+
+  <!-- Popup -->
+  <div id="ticketPopup" class="popup">
+    <h3 id="popupTitle">Get Pass</h3>
+    <form id="ticketForm">
+      <label for="numPasses">Number of Passes:</label><br>
+      <input type="number" id="numPasses" name="numPasses" min="1" required><br>
+      <div id="namesContainer"></div>
+      <div style="text-align:right;">
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closePopup()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div id="popupOverlay" onclick="closePopup()"></div>
+
+  <script>
+    const popup = document.getElementById('ticketPopup');
+    const overlay = document.getElementById('popupOverlay');
+    const popupTitle = document.getElementById('popupTitle');
+    const ticketForm = document.getElementById('ticketForm');
+    const numPassesInput = document.getElementById('numPasses');
+    const namesContainer = document.getElementById('namesContainer');
+    const pageMessage = document.getElementById('pageMessage');
+    let currentPass = '';
+    let currentArtist = '';
+
+    document.querySelectorAll('.ticket-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentPass = btn.dataset.pass;
+        currentArtist = btn.dataset.artist;
+        popupTitle.innerText = `${currentPass} - ${currentArtist}`;
+        numPassesInput.value = 1;
+        namesContainer.innerHTML = '';
+        pageMessage.style.display = 'none';
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+      });
+    });
+
+    numPassesInput.addEventListener('input', () => {
+      const count = parseInt(numPassesInput.value) || 1;
+      namesContainer.innerHTML = '';
+      for(let i = 1; i <= count; i++){
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = `Name of person ${i}`;
+        input.required = true;
+        namesContainer.appendChild(input);
+      }
+    });
+
+    ticketForm.onsubmit = function(e){
+      e.preventDefault();
+      const count = parseInt(numPassesInput.value) || 1;
+      const names = Array.from(namesContainer.querySelectorAll('input')).map(inp => inp.value.trim());
+      if(names.some(n => !n)){
+        pageMessage.innerText = 'Please enter all names.';
+        pageMessage.style.display = 'block';
+        return;
+      }
+      // Close popup
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+      // Show message on page
+      pageMessage.innerText = `${currentPass} booked for ${count} people at ${currentArtist}. Thank you!`;
+      pageMessage.style.display = 'block';
+      ticketForm.reset();
+      namesContainer.innerHTML = '';
+      // Auto-hide message after 6 seconds
+      setTimeout(() => {
+        pageMessage.style.display = 'none';
+      }, 6000);
+    }
+
+    function closePopup(){
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

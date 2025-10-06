@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Merch</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: white;
+      background-image: linear-gradient(rgb(0, 0, 0), rgb(28, 28, 27), rgb(47, 47, 45), rgb(70, 70, 67));
+    }
+
+    h1, b, u {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    img:not(.logo) {
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    img:not(.logo):hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+    }
+
+    nav {
+      background-color: rgb(0, 0, 0);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      margin: 40px auto;
+      border-collapse: separate;
+      border-spacing: 25px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: rgb(20, 20, 20);
+      font-size: 0.9em;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    /* Popup styling (same as tickets) */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #222;
+      color: white;
+      padding: 30px 24px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px #000;
+      z-index: 9999;
+      min-width: 300px;
+    }
+
+    .popup h3 { margin-top: 0; }
+    .popup input, .popup select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    #popupOverlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9998;
+    }
+
+    .confirmation {
+      background-color: #444;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 20px auto;
+      text-align: center;
+      max-width: 600px;
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <img src="wdfimg/logo.png" alt="logo" height="100" class="logo"><br><br>
+
+    <nav>
+      <ul>
+        <li><a href="/vsphp/Moonfest/public/index.html">Home</a></li>
+        <li><a href="/vsphp/Moonfest/public/lineup.html">Lineup</a></li>
+        <li><a href="/vsphp/Moonfest/public/tickets.html">Tickets</a></li>
+        <li><a href="/vsphp/Moonfest/public/plan.html">Plan</a></li>
+        <li><a href="/vsphp/Moonfest/public/news.html">News | Blog</a></li>
+        <li><a href="/vsphp/Moonfest/public/archives.html">Archives</a></li>
+        <li><a href="/vsphp/Moonfest/public/merch.html">Merch</a></li>
+        <li><a href="/vsphp/Moonfest/auth/sign.php">Sign in/up</a></li>
+        <li><a href="/vsphp/Moonfest/public/FAQs.html">FAQs</a></li>
+        <li><a href="/vsphp/Moonfest/public/aboutus.html">About MOONFEST</a></li>
+      </ul>
+    </nav>
+
+    <br>
+    <h1>MERCH</h1>
+    <p><i>THE OFFICIAL MERCH OF MOONFEST</i></p>
+
+    <table>
+      <tr>
+        <td><img src="wdfimg/h1.png" alt="merch" width="300"></td>
+        <td><img src="wdfimg/h2.png" alt="merch" width="300"></td>
+        <td><img src="wdfimg/h3.png" alt="merch" width="300"></td>
+      </tr>
+      <tr>
+        <td><img src="wdfimg/h4.png" alt="merch" width="300"></td>
+        <td><img src="wdfimg/h5.png" alt="merch" width="300"></td>
+        <td><img src="wdfimg/h6.png" alt="merch" width="300"></td>
+      </tr>
+      <tr>
+        <td><img src="wdfimg/h7.png" alt="merch" width="300"></td>
+        <td><img src="wdfimg/h8.png" alt="merch" width="300"></td>
+      </tr>
+    </table>
+
+    <div class="center">
+      <button type="button" id="getMerchBtn">GET YOURS NOW</button>
+    </div>
+    <div id="pageMessage" class="confirmation"></div>
+
+    <br>
+    <p><u><a href="index.html">Go Back To Home</a></u></p>
+  </center>
+
+  <footer>
+    <p>© 2025 MOONFEST. All rights reserved.</p>
+  </footer>
+
+  <!-- Popup -->
+  <div id="merchPopup" class="popup">
+    <h3>Get Your Merch</h3>
+    <form id="merchForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+      <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+
+      <label for="size">Select Size:</label><br>
+      <select id="size" name="size" required>
+        <option value="">--Select Size--</option>
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select><br>
+
+      <label for="color">Select Color:</label><br>
+      <select id="color" name="color" required>
+        <option value="">--Select Color--</option>
+        <option>Beige</option>
+        <option>Black</option>
+        <option>Grey</option>
+        <option>Olive</option>
+        <option>Brown</option>
+        <option>Green</option>
+        <option>White</option>
+      </select><br>
+
+      <div style="text-align:right;">
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closePopup()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div id="popupOverlay" onclick="closePopup()"></div>
+
+  <script>
+    const merchBtn = document.getElementById('getMerchBtn');
+    const merchPopup = document.getElementById('merchPopup');
+    const overlay = document.getElementById('popupOverlay');
+    const merchForm = document.getElementById('merchForm');
+    const pageMessage = document.getElementById('pageMessage');
+
+    merchBtn.addEventListener('click', () => {
+      merchPopup.style.display = 'block';
+      overlay.style.display = 'block';
+      pageMessage.style.display = 'none';
+    });
+
+    merchForm.onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const size = document.getElementById('size').value;
+      const color = document.getElementById('color').value;
+
+      if (!name || !email || !size || !color) {
+        pageMessage.innerText = 'Please fill all details.';
+        pageMessage.style.display = 'block';
+        return;
+      }
+
+      merchPopup.style.display = 'none';
+      overlay.style.display = 'none';
+
+      pageMessage.innerText = `Thanks! Your merch order has been recorded. We will contact you at ${email} for further details.`;
+      pageMessage.style.display = 'block';
+
+      merchForm.reset();
+
+      setTimeout(() => {
+        pageMessage.style.display = 'none';
+      }, 6000);
+    }
+
+    function closePopup() {
+      merchPopup.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

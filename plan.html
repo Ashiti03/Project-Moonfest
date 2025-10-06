@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plan</title>
+    <style>
+      body {
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(28, 28, 27), rgb(47, 47, 45), rgb(70, 70, 67));
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+      }
+
+      tr {
+        background-color: rgb(30, 30, 30);
+        border-radius: 15px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+      }
+
+      tr:hover {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+        background-color: rgb(50, 50, 50);
+      }
+
+      tr td:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+
+      tr td:last-child {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+
+      h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+      td {
+        padding: 20px;
+        vertical-align: middle;
+      }
+
+      button {
+        padding: 8px 16px;
+        margin-right: 10px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        background-color: #444;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #666;
+      }
+
+      footer {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: rgb(20, 20, 20);
+        font-size: 0.9em;
+        text-align: center;
+      }
+
+      img.logo {
+        display: block;
+        margin: 0 auto 20px auto;
+        border-radius: 0; 
+        box-shadow: none; 
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      nav {
+      background-color: rgb(0, 0, 0);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      h3 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      p.intro {
+        text-align: center;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="wdfimg/logo.png" alt="logo" height="100" class="logo">
+
+    <br>
+    <nav>
+    <ul>
+      <li><a href="/vsphp/Moonfest/public/index.html">Home</a></li>
+      <li><a href="/vsphp/Moonfest/public/lineup.html">Lineup</a></li>
+      <li><a href="/vsphp/Moonfest/public/tickets.html">Tickets</a></li>
+      <li><a href="/vsphp/Moonfest/public/plan.html">Plan</a></li>
+      <li><a href="/vsphp/Moonfest/public/news.html">News | Blog</a></li>
+      <li><a href="/vsphp/Moonfest/public/archives.html">Archives</a></li>
+      <li><a href="/vsphp/Moonfest/public/merch.html">Merch</a></li>
+      <li><a href="/vsphp/Moonfest/auth/sign.php">Sign in/up</a></li>
+      <li><a href="/vsphp/Moonfest/public/FAQs.html">FAQs</a></li>
+      <li><a href="/vsphp/Moonfest/public/aboutus.html">About MOONFEST</a></li>
+    </ul>
+  </nav>
+
+  <br>
+     <font size="25">
+      <p align="center"><b>PLAN</b></p>
+    </font>
+    <p class="intro">YOUR STAY, OUR RESPONSIBILITY</p>
+    <br><br>
+    <h2 align="center">ACCOMMODATION</h2>
+    <table>
+      <tr>
+        <td width="70%">
+          <b>Origin, The Red Rocks</b><br />
+          18485 W Colfax Ave, Golden, CO 80401, United States
+        </td>
+        <td align="center">
+          <button type="button">BOOK NOW</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Holiday Inn Denver Lakewood</b><br />
+          7390 W Hampden Ave, Lakewood, CO 80227, United States
+        </td>
+        <td align="center">
+          <button type="button">BOOK NOW</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>La Quinta Inn & Suites</b><br />
+          5669 S Alkire St, Littleton, CO 80127-1410, United States
+        </td>
+        <td align="center">
+          <button type="button">BOOK NOW</button>
+        </td>
+      </tr>
+    </table>
+
+    <h2 align="center">DINING</h2>
+    <table>
+      <tr>
+        <td width="70%">
+          <b>The Food Court</b><br />
+          22 Main Street, Cityville
+        </td>
+        <td align="center">
+          <button type="button">BOOK NOW</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Grill & Chill</b><br />
+          88 Sunset Ave, Hilltown
+        </td>
+        <td align="center">
+          <button type="button">BOOK NOW</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Midnight Diner</b><br />
+          143 Nightlife Blvd, Metropolis
+        </td>
+        <td align="center">
+          <button type="button">BOOK NOW</button>
+        </td>
+      </tr>
+    </table>
+
+    <p align="center"><u><a href="index.html">Go Back To Home</a></u></p>
+
+    <footer>
+      <p>© 2025 MOONFEST. All rights reserved.</p>
+    </footer>
+
+
+<div id="bookingPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+  background:#222; color:white; padding:30px 24px; border-radius:16px; box-shadow:0 0 30px #000; z-index:9999; min-width:300px;">
+  <h3 id="popupTitle" style="margin-top:0;">Book Now</h3>
+  <form id="bookingForm">
+    <label for="place" style="display:none;">Place:</label>
+    <input type="hidden" id="place" name="place">
+    <label for="people">Number of people:</label><br>
+    <input type="number" id="people" name="people" min="1" required style="width:100%;margin-bottom:10px;"><br>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date" required style="width:100%;margin-bottom:10px;"><br>
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" required style="width:100%;margin-bottom:10px;"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required style="width:100%;margin-bottom:10px;"><br>
+    <div style="text-align:right;">
+      <button type="submit" style="margin-right:8px;">Submit</button>
+      <button type="button" onclick="closePopup()">Cancel</button>
+    </div>
+  </form>
+</div>
+<div id="popupOverlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); z-index:9998;" onclick="closePopup()"></div>
+
+<script>
+  document.querySelectorAll('button[type="button"]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var place = btn.closest('tr').querySelector('b').innerText;
+      document.getElementById('popupTitle').innerText = 'Book at ' + place;
+      document.getElementById('place').value = place;
+      document.getElementById('bookingForm').reset();
+      document.getElementById('bookingPopup').style.display = 'block';
+      document.getElementById('popupOverlay').style.display = 'block';
+    });
+  });
+
+  document.getElementById('bookingForm').onsubmit = function(e) {
+    e.preventDefault();
+    var place = document.getElementById('place').value;
+    var people = document.getElementById('people').value;
+    var date = document.getElementById('date').value;
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    if (!people || !date || !name || !email) {
+      alert('Please fill all fields.');
+      return;
+    }
+
+    closePopup();
+    setTimeout(function() {
+      alert('Booking confirmed for ' + people + ' people at ' + place + ' on ' + date + '.\nThank you, ' + name + '!');
+    }, 200);
+  };
+
+  function closePopup() {
+    document.getElementById('bookingPopup').style.display = 'none';
+    document.getElementById('popupOverlay').style.display = 'none';
+  }
+</script>
+  </body>
+</html>

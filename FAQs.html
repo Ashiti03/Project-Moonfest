@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FAQs</title>
+    <style>
+      body {
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(28, 28, 27), rgb(47, 47, 45), rgb(70, 70, 67));
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      img.logo {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .faq-question {
+      cursor: pointer;
+      padding: 10px;
+      margin: 5px 0;
+      }
+
+      .faq-answer {
+      display: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+        color: white;
+        margin-top: 40px;
+      }
+
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      nav {
+      background-color: rgb(0, 0, 0);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+      #popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      padding: 20px;
+      z-index: 1000;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6); 
+      background-color: rgba(0, 0, 0, 0.9);
+      }
+
+    #popupOverlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 999;
+    }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+button,
+input[type="submit"] {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+  margin: 8px 0;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #666;
+}
+
+      footer {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: rgb(20, 20, 20);
+        font-size: 0.9em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="wdfimg/logo.png" alt="logo" height="100" class="logo" />
+    <br>
+    <nav>
+    <ul>
+      <li><a href="/vsphp/Moonfest/public/index.html">Home</a></li>
+      <li><a href="/vsphp/Moonfest/public/lineup.html">Lineup</a></li>
+      <li><a href="/vsphp/Moonfest/public/tickets.html">Tickets</a></li>
+      <li><a href="/vsphp/Moonfest/public/plan.html">Plan</a></li>
+      <li><a href="/vsphp/Moonfest/public/news.html">News | Blog</a></li>
+      <li><a href="/vsphp/Moonfest/public/archives.html">Archives</a></li>
+      <li><a href="/vsphp/Moonfest/public/merch.html">Merch</a></li>
+      <li><a href="/vsphp/Moonfest/auth/sign.php">Sign in/up</a></li>
+      <li><a href="/vsphp/Moonfest/public/FAQs.html">FAQs</a></li>
+      <li><a href="/vsphp/Moonfest/public/aboutus.html">About MOONFEST</a></li>
+    </ul>
+  </nav>
+
+  <br>
+    <h1>FAQs</h1>
+
+
+<div class="content">
+  <h2>1. Tickets & Admission</h2>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> How do I purchase tickets for the festival?</div>
+    <div class="faq-answer"><strong>A:</strong> Tickets can be purchased 
+      exclusively through our official website, on the <a href="tickets.html"><u>Tickets page</u></a>. 
+      We strongly advise against purchasing from unauthorized third-party sellers.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> What types of tickets are available?</div>
+    <div class="faq-answer"><strong>A:</strong> We offer various ticket types including General Admission (GA) 1-Day, GA Weekend, 
+      VIP 1-Day, and VIP Weekend passes. Please see our tickets page for full details and pricing.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> Are tickets refundable or transferable?</div>
+    <div class="faq-answer"><strong>A:</strong> All ticket sales are final. We do 
+      not offer refunds or exchanges unless the event is cancelled 
+      or rescheduled. Transfers are not possible.</div>
+  </div>
+
+  <h2>2. Entry & Re-Entry</h2>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> What time do gates open each day?</div>
+    <div class="faq-answer"><strong>A:</strong> For gate opening times, we will send you an official
+       email, 1 or 2 days prior to the show. In case you do not recieve the email, please 
+       inform us at <u>contact.support@moonfest.com</u>.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> What should I bring for entry?</div>
+    <div class="faq-answer"><strong>A:</strong> Please bring your valid ticket (printed or on your mobile device) and a valid government-issued photo ID.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> Is re-entry allowed?</div>
+    <div class="faq-answer"><strong>A:</strong> No, re-entry is not permitted once you have exited the festival grounds each day. Please check the 
+      specific policy on your ticket type.</div>
+  </div>
+
+  <h2>3. Getting There & Parking</h2>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> How can I get to the festival?</div>
+    <div class="faq-answer"><strong>A:</strong> We recommend using public transport, ride-sharing services, or our official shuttle service. Detailed
+      directions and public transport routes can be found on the venue.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> Is parking available?</div>
+    <div class="faq-answer"><strong>A:</strong> Limited parking will be available on a first-come, first-served basis for a fee. We strongly encourage 
+      carpooling or using alternative transportation due to limited space.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><strong>Q:</strong> Is there a designated pick-up/drop-off area for ride-shares or taxis?</div>
+    <div class="faq-answer"><strong>A:</strong> Yes, there will be a clearly marked pick-up/drop-off zone near the main entrance. Please follow signage upon arrival.</div>
+  </div>
+  </div>
+
+<script>
+ document.querySelectorAll(".faq-question").forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      });
+    });
+
+</script>
+
+    <p class="center"><u><a href="index.html">Go Back To Home</a></u></p>
+
+    <footer>
+      <p>© 2025 MOONFEST. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
