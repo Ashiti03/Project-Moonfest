@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
                     clearCookieSafe('remember_username');
                 }
 
-                header("Location: /vsphp/public/index.html");
+                header("Location:index.html");
                 exit;
             }
         }
@@ -115,7 +115,7 @@ if (isset($_GET['logout'])) {
     clearCookieSafe('session_active');
     clearCookieSafe('session_started_at');
 
-    header("Location: /vsphp/auth/sign.php");
+    header("Location:sign.php");
     exit;
 }
 ?>
@@ -263,4 +263,5 @@ if (isset($_GET['logout'])) {
   </footer>
 </body>
 </html>
+
 
